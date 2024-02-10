@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tarea1_ud3.controladores.ControladorVentanaPrincipal">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <Button fx:id="btnInfantil" mnemonicParsing="false" onAction="#onInfantil" text="INFANTIL" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="150.0" />
+               </BorderPane.margin>
+            </Button>
+         </left>
+         <center>
+            <Button fx:id="btnRomantica" mnemonicParsing="false" onAction="#onRomantica" text="ROMANTICA" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <Button fx:id="btnTerror" mnemonicParsing="false" onAction="#onTerror" text="TERROR" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="150.0" />
+               </BorderPane.margin>
+            </Button>
+         </right>
+      </BorderPane>
+      <HBox fx:id="hBox1" prefHeight="400.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="imagen1" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="btnReiniciar" mnemonicParsing="false" onAction="#onReiniciar" text="REINICIAR">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="salir" mnemonicParsing="false" onAction="#onSalir" text="SALIR" />
+         </children></HBox>
+   </children>
+</VBox>
