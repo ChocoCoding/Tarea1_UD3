@@ -1,0 +1,51 @@
+.root{
+    background: linear-gradient(to right, #4CAF50, #333);
+
+}
+
+#hBox1{
+    -fx-background-color: white;
+}
+
+Button{
+    -fx-background-color: #4CAF50; /* Color de fondo */
+    -fx-text-fill: #fff; /* Color del texto */
+    -fx-font-size: 14px; /* Tamaño de fuente */
+    -fx-font-weight: bold; /* Peso de la fuente */
+    -fx-padding: 10 20; /* Relleno interno (arriba y abajo, izquierda y derecha) */
+    -fx-border-radius: 5; /* Radio de las esquinas */
+
+}
+
+#btnInfantil:pressed{
+-fx-background-image: url("file:///C:/Users/Gonzalo/IdeaProjects/Tarea1_UD3/src/img/css/i_f.jpg");
+
+}
+
+
+/*
+#btnReiniciar{
+-fx-background-color: #45a049;
+}
+
+
+#btnInfantil: hover{
+-fx-background-color: #45a049;
+}
+
+#btnRomantica: hover{
+-fx-background-color: #45a049;
+}
+
+#btnTerror: hover{
+-fx-background-color: #45a049;
+}
+*/
+.button:hover{
+-fx-background-color: #45a049;
+}
+
+#salir{
+    -fx-background-color: red;
+}
+

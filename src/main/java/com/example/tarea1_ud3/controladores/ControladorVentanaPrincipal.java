@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -41,7 +42,7 @@ public class ControladorVentanaPrincipal implements Initializable {
     @FXML
     private ImagenPersonalizada img3;
 
-    private ImagenPersonalizada[] arrayImagenes = {img1,img2,img3};
+    private ImagenPersonalizada[] arrayImagenes = { img1, img2, img3};
 
     @FXML
     private Button salir;
@@ -81,6 +82,8 @@ public class ControladorVentanaPrincipal implements Initializable {
 
     @FXML
     protected void onInfantil(ActionEvent evt) throws InterruptedException {
+        Button infantil = (Button) evt.getSource();
+        infantil.getScene().getRoot().setStyle("-fx-background-image: url('file:///C:/Users/Gonzalo/IdeaProjects/Tarea1_UD3/src/img/css/i_f.jpg'); -fx-background-size: cover;");
         ruta = "C:\\Users\\Gonzalo\\IdeaProjects\\Tarea1_UD3\\src\\img\\i\\";
         tipo = 'i';
         secuenciarImagenes();
@@ -89,23 +92,29 @@ public class ControladorVentanaPrincipal implements Initializable {
 
     @FXML
     protected void onRomantica(ActionEvent evt) {
+        //hBox1.getChildren().clear();
+        Button r = (Button) evt.getSource();
+        r.getScene().getRoot().setStyle("-fx-background-image: url('file:///C:/Users/Gonzalo/IdeaProjects/Tarea1_UD3/src/img/css/r_f.jpg'); -fx-background-size: cover;");
         ruta = "C:\\Users\\Gonzalo\\IdeaProjects\\Tarea1_UD3\\src\\img\\r\\";
         tipo = 'r';
         secuenciarImagenes();
     }
 
-
-    private void mostrarImagenes(AtomicInteger contador, ImagenPersonalizada img) {
-        hBox1.getChildren().add(Integer.parseInt(String.valueOf(contador)),img);
-    }
-
-
     @FXML
     protected void onTerror(ActionEvent evt) {
+        //hBox1.getChildren().clear();
+        Button t = (Button) evt.getSource();
+        t.getScene().getRoot().setStyle("-fx-background-image: url('file:///C:/Users/Gonzalo/IdeaProjects/Tarea1_UD3/src/img/css/t_f.jpg'); -fx-background-size: cover;");
         ruta = "C:\\Users\\Gonzalo\\IdeaProjects\\Tarea1_UD3\\src\\img\\t\\";
         tipo = 't';
         secuenciarImagenes();
     }
+
+    private void mostrarImagenes(AtomicInteger contador, ImagenPersonalizada img) {
+        hBox1.getChildren().set(Integer.parseInt(String.valueOf(contador)),img);
+        //hBox1.getChildren().add(Integer.parseInt(String.valueOf(contador)),img);
+    }
+
 
     public void secuenciarImagenes(){
         Image image;
@@ -114,11 +123,10 @@ public class ControladorVentanaPrincipal implements Initializable {
             image = new Image(ruta+x+".jpg");
             arrayImagenes[x] = new ImagenPersonalizada(image,tipo);
             arrayImagenes[x].setImage(image);
-            arrayImagenes[x].setFitHeight(500);
+            arrayImagenes[x].setFitHeight(400);
             arrayImagenes[x].setFitWidth(300);
         }
 
-        //mostrarImagenes(ruta,tipo);
         timeline = new Timeline(new KeyFrame(Duration.seconds(arrayImagenes[Integer.parseInt(String.valueOf(contador))].getDuracion()),v ->{
             mostrarImagenes(contador,arrayImagenes[Integer.parseInt(String.valueOf(contador))]);
             contador.getAndIncrement();
@@ -129,8 +137,9 @@ public class ControladorVentanaPrincipal implements Initializable {
 
     @FXML
     protected void onReiniciar(ActionEvent evt) {
-        btnReiniciar = (Button) evt.getSource();
+        for (int i = 0; i < arrayImagenes.length; i++) {
+            hBox1.getChildren().get(i).setVisible(false);
+        }
+
     }
-
-
 }

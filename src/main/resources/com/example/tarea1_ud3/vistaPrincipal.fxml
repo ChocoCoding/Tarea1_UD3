@@ -5,39 +5,50 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tarea1_ud3.controladores.ControladorVentanaPrincipal">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tarea1_ud3.controladores.ControladorVentanaPrincipal">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
-         <left>
-            <Button fx:id="btnInfantil" mnemonicParsing="false" onAction="#onInfantil" text="INFANTIL" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets left="150.0" />
-               </BorderPane.margin>
-            </Button>
-         </left>
-         <center>
-            <Button fx:id="btnRomantica" mnemonicParsing="false" onAction="#onRomantica" text="ROMANTICA" BorderPane.alignment="CENTER" />
-         </center>
-         <right>
-            <Button fx:id="btnTerror" mnemonicParsing="false" onAction="#onTerror" text="TERROR" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets right="150.0" />
-               </BorderPane.margin>
-            </Button>
-         </right>
-      </BorderPane>
+      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="125.0" prefWidth="650.0">
+               <left>
+                  <Button fx:id="btnInfantil" mnemonicParsing="false" onAction="#onInfantil" text="INFANTIL" BorderPane.alignment="CENTER" />
+               </left>
+               <center>
+                  <Button fx:id="btnRomantica" mnemonicParsing="false" onAction="#onRomantica" text="ROMANTICA" BorderPane.alignment="CENTER" />
+               </center>
+               <right>
+                  <Button fx:id="btnTerror" mnemonicParsing="false" onAction="#onTerror" text="TERROR" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+         </children>
+      </HBox>
       <HBox fx:id="hBox1" prefHeight="400.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="imagen1" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
-         </children></HBox>
-      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0">
-         <children>
-            <Button fx:id="btnReiniciar" mnemonicParsing="false" onAction="#onReiniciar" text="REINICIAR">
+            <ImageView fx:id="imagen1" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></ImageView>
+            <ImageView fx:id="imagen2" fitHeight="400.0" fitWidth="300.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
-            </Button>
-            <Button fx:id="salir" mnemonicParsing="false" onAction="#onSalir" text="SALIR" />
+            </ImageView>
+            <ImageView fx:id="imagen3" fitHeight="400.0" fitWidth="300.0" layoutX="310.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0">
+         <children>
+            <BorderPane prefHeight="125.0" prefWidth="554.0">
+               <right>
+                  <Button fx:id="salir" mnemonicParsing="false" onAction="#onSalir" text="SALIR" BorderPane.alignment="CENTER" />
+               </right>
+               <left>
+                  <Button fx:id="btnReiniciar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onReiniciar" text="LIMPIAR" BorderPane.alignment="CENTER" />
+               </left>
+            </BorderPane>
          </children></HBox>
    </children>
 </VBox>

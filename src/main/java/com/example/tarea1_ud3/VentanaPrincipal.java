@@ -12,6 +12,7 @@ public class VentanaPrincipal extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(VentanaPrincipal.class.getResource("vistaPrincipal.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(getClass().getResource("estilos.css").toExternalForm());
         stage.setTitle("Historias Interactivas");
         stage.setScene(scene);
         stage.show();
